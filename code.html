@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout - ConeCafé</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#FFB040",
+            "background-light": "#FFFBF5",
+            "background-dark": "#231a0f",
+            "header-dark": "#291C1C",
+            "light-brown": "#f5f2f0",
+          },
+          fontFamily: {
+            "display": ["Work Sans", "Noto Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181511] dark:text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="bg-header-dark text-white px-4 md:px-10 py-3 shadow-md">
+<div class="flex items-center justify-between max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<a class="text-sm font-medium leading-normal" href="#">Menu</a>
+<a class="text-sm font-medium leading-normal" href="#">Deals</a>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">ConeCafé</h2>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-header-dark text-sm font-bold leading-normal tracking-[0.015em] shadow-sm hover:opacity-90 transition-opacity">
+<span class="truncate">Order (2)</span>
+</button>
+<div class="flex items-center gap-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCRVCyxLL0MIjMLzMqfGnkZPHDExXCBDZlcl_Mtzic9qlhBLqmnMCtC6ig7bJEbPwZbbzNLro7HUXH3478ywVS23iRDL5P43RtrhF5Em-WdJw8A5gZhaM-VEnGHRGiIPBNp_SkVyK48HwvZExGUu3iHJkazXwtpWGUYdPr0kMhLh7ouByfX2op2rDJi1S74yLhpLrOkI9kq8VUA5EEmE7pL9ekxpdEqhBjmvfwjhuqoTjUuMMYdLstP84I5DWNAc_Z8FeIYr6R_D5YE");'></div>
+<span class="text-sm font-medium">John</span>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 px-4 md:px-10 lg:px-20 py-10">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-wrap justify-between gap-3 p-4">
+<p class="text-[#181511] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Checkout</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-6">
+<div class="lg:col-span-2">
+<div class="flex flex-col gap-4">
+<details class="flex flex-col rounded-xl border border-[#e6e1db] dark:border-gray-700 bg-white dark:bg-header-dark shadow-sm group" open="">
+<summary class="flex cursor-pointer items-center justify-between gap-6 p-4">
+<p class="text-[#181511] dark:text-white text-lg font-bold">1. Pickup or Delivery</p>
+<span class="material-symbols-outlined text-[#181511] dark:text-white group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-4 pb-4">
+<div class="flex px-4 py-3">
+<div class="flex h-10 w-full items-center justify-center rounded-lg bg-light-brown dark:bg-background-dark p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white has-[:checked]:dark:bg-gray-700 has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-[#181511] has-[:checked]:dark:text-white text-[#8c785f] dark:text-gray-400 text-sm font-medium leading-normal">
+<span class="truncate">Pickup</span>
+<input checked="" class="invisible w-0" name="delivery_option" type="radio" value="Pickup"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white has-[:checked]:dark:bg-gray-700 has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-[#181511] has-[:checked]:dark:text-white text-[#8c785f] dark:text-gray-400 text-sm font-medium leading-normal">
+<span class="truncate">Delivery</span>
+<input class="invisible w-0" name="delivery_option" type="radio" value="Delivery"/>
+</label>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+<label class="flex flex-col">
+<p class="text-[#181511] dark:text-white text-base font-medium leading-normal pb-2">Pickup Time</p>
+<select class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181511] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6e1db] dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary dark:focus:border-primary h-14 placeholder:text-[#8c785f] p-[15px] text-base font-normal leading-normal shadow-sm">
+<option>10:30 AM</option>
+<option>10:45 AM</option>
+<option>11:00 AM</option>
+</select>
+</label>
+<label class="flex flex-col">
+<p class="text-[#181511] dark:text-white text-base font-medium leading-normal pb-2">Name</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181511] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6e1db] dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary dark:focus:border-primary h-14 placeholder:text-[#8c785f] p-[15px] text-base font-normal leading-normal shadow-sm" placeholder="John Doe" type="text" value="John Doe"/>
+</label>
+<label class="flex flex-col">
+<p class="text-[#181511] dark:text-white text-base font-medium leading-normal pb-2">Phone</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181511] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6e1db] dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary dark:focus:border-primary h-14 placeholder:text-[#8c785f] p-[15px] text-base font-normal leading-normal shadow-sm" placeholder="(123) 456-7890" type="tel" value="(123) 456-7890"/>
+</label>
+<label class="flex flex-col">
+<p class="text-[#181511] dark:text-white text-base font-medium leading-normal pb-2">Email</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181511] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6e1db] dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary dark:focus:border-primary h-14 placeholder:text-[#8c785f] p-[15px] text-base font-normal leading-normal shadow-sm" placeholder="john.doe@example.com" type="email" value="john.doe@example.com"/>
+</label>
+<label class="flex flex-col md:col-span-2">
+<p class="text-[#181511] dark:text-white text-base font-medium leading-normal pb-2">Note (optional)</p>
+<textarea class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181511] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6e1db] dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary dark:focus:border-primary h-24 placeholder:text-[#8c785f] p-[15px] text-base font-normal leading-normal shadow-sm" placeholder="Any special requests?">Extra foam on the latte, please.</textarea>
+</label>
+</div>
+</div>
+</details>
+<details class="flex flex-col rounded-xl border border-[#e6e1db] dark:border-gray-700 bg-white dark:bg-header-dark shadow-sm group" open="">
+<summary class="flex cursor-pointer items-center justify-between gap-6 p-4">
+<p class="text-[#181511] dark:text-white text-lg font-bold">2. Payment &amp; Rewards</p>
+<span class="material-symbols-outlined text-[#181511] dark:text-white group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-4 pb-4">
+<div class="grid grid-cols-1 gap-4 p-4">
+<div>
+<label class="text-[#181511] dark:text-white text-base font-medium leading-normal pb-2 block" for="payment-method">Payment Method</label>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181511] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6e1db] dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary dark:focus:border-primary h-14 placeholder:text-[#8c785f] p-[15px] text-base font-normal leading-normal shadow-sm" id="payment-method">
+<option selected="">Visa **** 1234</option>
+<option>MasterCard **** 5678</option>
+<option>e-Pay</option>
+</select>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="flex flex-col">
+<p class="text-[#181511] dark:text-white text-base font-medium leading-normal pb-2">Card Number</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181511] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6e1db] dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary dark:focus:border-primary h-14 placeholder:text-[#8c785f] p-[15px] text-base font-normal leading-normal shadow-sm" placeholder="**** **** **** 1234" type="text" value="1234 5678 9101 1121"/>
+</label>
+<label class="flex flex-col">
+<p class="text-[#181511] dark:text-white text-base font-medium leading-normal pb-2">Cardholder Name</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181511] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6e1db] dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary dark:focus:border-primary h-14 placeholder:text-[#8c785f] p-[15px] text-base font-normal leading-normal shadow-sm" placeholder="John Doe" type="text" value="John Doe"/>
+</label>
+<label class="flex flex-col">
+<p class="text-[#181511] dark:text-white text-base font-medium leading-normal pb-2">Expiry Date</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181511] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6e1db] dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary dark:focus:border-primary h-14 placeholder:text-[#8c785f] p-[15px] text-base font-normal leading-normal shadow-sm" placeholder="MM/YY" type="text" value="12/25"/>
+</label>
+<label class="flex flex-col">
+<p class="text-[#181511] dark:text-white text-base font-medium leading-normal pb-2">CVV</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#181511] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6e1db] dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary dark:focus:border-primary h-14 placeholder:text-[#8c785f] p-[15px] text-base font-normal leading-normal shadow-sm" placeholder="***" type="text" value="123"/>
+</label>
+</div>
+<div class="flex items-center space-x-3 mt-2">
+<input checked="" class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-[#e6e1db] dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm" id="use-points" type="checkbox"/>
+<label class="text-[#181511] dark:text-white text-base font-medium" for="use-points">Use 100 points ($1.39)</label>
+</div>
+<div class="flex items-center justify-between mt-2">
+<label class="text-[#181511] dark:text-white text-base font-medium" for="save-payment">Save payment method</label>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="save-payment" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-light-brown peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary/50 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+</details>
+<details class="flex flex-col rounded-xl border border-[#e6e1db] dark:border-gray-700 bg-white dark:bg-header-dark shadow-sm group" open="">
+<summary class="flex cursor-pointer items-center justify-between gap-6 p-4">
+<p class="text-[#181511] dark:text-white text-lg font-bold">3. Review &amp; Confirm</p>
+<span class="material-symbols-outlined text-[#181511] dark:text-white group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-4 pb-4">
+<div class="p-4 space-y-6 text-[#181511] dark:text-gray-300">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-base text-[#181511] dark:text-white mb-1">Order Items</h4>
+<div class="flex items-start gap-4">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="A cup of latte with latte art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACYBT9avuuOfMSDPMvdyEKSyan7aSXU-ZgZgOxYrjAMt54LQW324PuFraGkeKZ2YjWHJULLSTy6EXnCXW2gOfNzJb5NhCANAQz6H4Ophh4k04fG-GBWCmOWmrRiCDXei7douMx6vJhLPFZbxvqIE1uArLlVjKAJeL11GLamC3yqbG357j60YOaN4tOYPfadaq6a7LPSTiEZDzgSOPnzDukwgTf4oQXenqI2r4bHw_5flKwOinO4We7PP00GWM-yuih4WB2Yyn3_rcg"/>
+<div>
+<p class="font-medium text-[#181511] dark:text-white">Latte (x1)</p>
+<p class="text-sm text-[#8c785f] dark:text-gray-400">Note: Extra foam</p>
+</div>
+</div>
+<div class="flex items-start gap-4 mt-2">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="A blueberry muffin on a plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHoxJXtQi7EstLHvNTS4GWa-FFQeZc9VUnnA86a091_yj9JIcktPZRZDcv6mev7LmOIi3aleOrIZcANUK6L5720oT79pWOQFUfBr8EBervbztRPIbbxmkDb4rzKX4USwU0WnlOcRB9MdZUme7gNQLZQvHFr3nEapEvNL7mJBN_azUqwn1BQDISIObeb7oEmM9P-oyTJdZASFeYphX5gl6klTp8g0kkOP9Ak-1WefNRtrPP6VbteOwMVrUSMTc1DSPwvM9P9wYTM7mP"/>
+<div>
+<p class="font-medium text-[#181511] dark:text-white">Blueberry Muffin (x1)</p>
+</div>
+</div>
+</div>
+<a class="text-primary font-medium text-sm hover:underline" href="#">Edit</a>
+</div>
+<div class="border-t border-[#e6e1db] dark:border-gray-700 my-2"></div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-base text-[#181511] dark:text-white mb-1">Pickup Info</h4>
+<p>Pickup Time: <span class="font-medium text-[#181511] dark:text-white">10:30 AM</span></p>
+<p>Pickup For: <span class="font-medium text-[#181511] dark:text-white">John Doe</span></p>
+</div>
+<a class="text-primary font-medium text-sm hover:underline" href="#">Edit</a>
+</div>
+<div class="border-t border-[#e6e1db] dark:border-gray-700 my-2"></div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-base text-[#181511] dark:text-white mb-1">Contact</h4>
+<p>Phone: <span class="font-medium text-[#181511] dark:text-white">(123) 456-7890</span></p>
+<p>Email: <span class="font-medium text-[#181511] dark:text-white">john.doe@example.com</span></p>
+</div>
+<a class="text-primary font-medium text-sm hover:underline" href="#">Edit</a>
+</div>
+<div class="border-t border-[#e6e1db] dark:border-gray-700 my-2"></div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-base text-[#181511] dark:text-white mb-1">Payment</h4>
+<p>Method: <span class="font-medium text-[#181511] dark:text-white">Visa ending in 1234</span></p>
+<p>Rewards: <span class="font-medium text-green-600 dark:text-green-400">100 points applied (-$1.39)</span></p>
+</div>
+<a class="text-primary font-medium text-sm hover:underline" href="#">Edit</a>
+</div>
+<div class="flex items-start space-x-3 mt-4">
+<input checked="" class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-[#e6e1db] dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm mt-0.5" id="confirm-details" type="checkbox"/>
+<label class="text-[#181511] dark:text-gray-300 text-sm" for="confirm-details">I confirm all details are correct and agree to pickup guidelines.</label>
+</div>
+</div>
+</div>
+</details>
+</div>
+</div>
+<div class="lg:col-span-1">
+<div class="bg-white dark:bg-header-dark rounded-xl shadow-sm border border-[#e6e1db] dark:border-gray-700 overflow-hidden">
+<div class="p-4 bg-light-brown dark:bg-background-dark">
+<h3 class="text-lg font-bold text-[#181511] dark:text-white">Order Summary</h3>
+</div>
+<div class="p-4 space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<img class="w-16 h-16 rounded-lg object-cover" data-alt="A cup of latte with latte art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACYBT9avuuOfMSDPMvdyEKSyan7aSXU-ZgZgOxYrjAMt54LQW324PuFraGkeKZ2YjWHJULLSTy6EXnCXW2gOfNzJb5NhCANAQz6H4Ophh4k04fG-GBWCmOWmrRiCDXei7douMx6vJhLPFZbxvqIE1uArLlVjKAJeL11GLamC3yqbG357j60YOaN4tOYPfadaq6a7LPSTiEZDzgSOPnzDukwgTf4oQXenqI2r4bHw_5flKwOinO4We7PP00GWM-yuih4WB2Yyn3_rcg"/>
+<div>
+<p class="font-medium text-[#181511] dark:text-white">Latte</p>
+<p class="text-sm text-[#8c785f] dark:text-gray-400">$4.99</p>
+</div>
+</div>
+<p class="font-medium text-[#181511] dark:text-white">1</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<img class="w-16 h-16 rounded-lg object-cover" data-alt="A blueberry muffin on a plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHoxJXtQi7EstLHvNTS4GWa-FFQeZc9VUnnA86a091_yj9JIcktPZRZDcv6mev7LmOIi3aleOrIZcANUK6L5720oT79pWOQFUfBr8EBervbztRPIbbxmkDb4rzKX4USwU0WnlOcRB9MdZUme7gNQLZQvHFr3nEapEvNL7mJBN_azUqwn1BQDISIObeb7oEmM9P-oyTJdZASFeYphX5gl6klTp8g0kkOP9Ak-1WefNRtrPP6VbteOwMVrUSMTc1DSPwvM9P9wYTM7mP"/>
+<div>
+<p class="font-medium text-[#181511] dark:text-white">Blueberry Muffin</p>
+<p class="text-sm text-[#8c785f] dark:text-gray-400">$2.99</p>
+</div>
+</div>
+<p class="font-medium text-[#181511] dark:text-white">1</p>
+</div>
+<div class="border-t border-[#e6e1db] dark:border-gray-700 pt-4 space-y-2 text-sm">
+<div class="flex justify-between text-[#181511] dark:text-gray-300">
+<p>Subtotal</p>
+<p>$7.98</p>
+</div>
+<div class="flex justify-between text-[#181511] dark:text-gray-300">
+<p>Tax</p>
+<p>$0.68</p>
+</div>
+<div class="flex justify-between text-green-600 dark:text-green-400">
+<p>Loyalty Points</p>
+<p>-$1.39</p>
+</div>
+</div>
+<div class="border-t border-[#e6e1db] dark:border-gray-700 pt-4">
+<div class="flex justify-between items-center">
+<p class="text-lg font-bold text-[#181511] dark:text-white">Total</p>
+<p class="text-2xl font-black text-[#181511] dark:text-white">$7.27</p>
+</div>
+</div>
+<button class="w-full flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-primary text-header-dark text-base font-bold leading-normal tracking-[0.015em] shadow-md hover:opacity-90 transition-opacity mt-4">
+<span class="truncate">Place Order</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>
